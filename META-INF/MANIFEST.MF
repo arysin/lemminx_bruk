@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: ua.net.nlp.lemminx_bruk;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: lemminx.bruk
+Export-Package: ua.net.nlp.lemminx_bruk
+Require-Bundle: org.eclipse.m2e.editor.lemminx;bundle-version="2.0.0"
