@@ -44,17 +44,29 @@ import org.junit.jupiter.api.Test;
  */
 public class BrukPluginTest extends AbstractCacheBasedTest {
 
-  @Test
-  public void testApp() throws BadLocationException {
+	@Test
+	public void testCompletionLemma() throws BadLocationException {
 
-	  String xml = "<?xml version=\"1.0\"?>\r\n" +
-				"<token value=\"v1\" tags=\"" +
+		String xml = "<?xml version=\"1.0\"?>\r\n" +
+				"<token value=\"голова\" lemma=\"" +
 				"|";
 
-		testCompletionFor(xml,
-				c("1x", te(1, 24, 1, 23, "1x"), "1x"), 
-				c("2x", te(1, 24, 1, 23, "2x"), "2x"),
-				c("3x", te(1, 24, 1, 23, "3x"), "3x")
-		);
+//		testCompletionFor(xml,
+//				c("голова", te(1, 29, 1, 28, "голова"), "голова") 
+//				);
+	}
+
+	@Test
+	public void testCompletionTags() throws BadLocationException {
+
+		String xml = "<?xml version=\"1.0\"?>\r\n" +
+				"<token value=\"голова\" lemma=\"голова\" tags=\"" +
+				"|";
+
+//		testCompletionFor(xml,
+//				c("noun:anim:f:v_naz", te(1, 43, 1, 42, "noun:anim:f:v_naz"), "noun:anim:f:v_naz"), 
+//				c("noun:anim:m:v_naz", te(1, 43, 1, 42, "noun:anim:m:v_naz"), "noun:anim:m:v_naz"),
+//				c("noun:inanim:f:v_naz", te(1, 43, 1, 42, "noun:inanim:f:v_naz"), "noun:inanim:f:v_naz")
+//		);
   }
 }

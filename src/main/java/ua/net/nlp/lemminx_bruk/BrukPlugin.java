@@ -1,7 +1,5 @@
 package ua.net.nlp.lemminx_bruk;
 
-import java.util.logging.Logger;
-
 import org.eclipse.lemminx.services.extensions.IXMLExtension;
 import org.eclipse.lemminx.services.extensions.XMLExtensionsRegistry;
 import org.eclipse.lemminx.services.extensions.completion.CompletionParticipantAdapter;
@@ -9,12 +7,12 @@ import org.eclipse.lemminx.services.extensions.save.ISaveContext;
 import org.eclipse.lsp4j.InitializeParams;
 
 public class BrukPlugin implements IXMLExtension {
-	private Logger logger = Logger.getLogger(getClass().getName());
+//	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	private CompletionParticipantAdapter completionParticipant;
 
 	public BrukPlugin() {
-		logger.warning("======= bruk extention created");
+		System.out.println("======= bruk extention created");
 		
 		completionParticipant = new CompletionParticipant();
 	}
@@ -28,7 +26,7 @@ public class BrukPlugin implements IXMLExtension {
 	public void start(InitializeParams params, XMLExtensionsRegistry registry) {
 		// Register here completion, hover, etc participants
 
-		logger.warning("======= bruk extention started");
+		System.out.println("======= bruk extention started");
 
 		registry.registerCompletionParticipant(completionParticipant);
 	}
