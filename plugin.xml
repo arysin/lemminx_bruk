@@ -2,6 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension point="org.eclipse.wildwebdeveloper.xml.lemminxExtension">
-      <jar path="target/lemminx_bruk-0.0.1-SNAPSHOT.jar" />
+      <jar
+            path="target/lemminx_bruk-0.0.1-SNAPSHOT-jar-with-dependencies.jar">
+      </jar>
    </extension>
 </plugin>

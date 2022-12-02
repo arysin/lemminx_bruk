@@ -35,14 +35,13 @@ import static org.eclipse.lemminx.XMLAssert.c;
 import static org.eclipse.lemminx.XMLAssert.te;
 import static org.eclipse.lemminx.XMLAssert.testCompletionFor;
 
-import org.eclipse.lemminx.AbstractCacheBasedTest;
 import org.eclipse.lemminx.commons.BadLocationException;
 import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
  */
-public class BrukPluginTest extends AbstractCacheBasedTest {
+public class BrukPluginTest {
 
 	@Test
 	public void testCompletionLemma() throws BadLocationException {
@@ -51,9 +50,9 @@ public class BrukPluginTest extends AbstractCacheBasedTest {
 				"<token value=\"голова\" lemma=\"" +
 				"|";
 
-//		testCompletionFor(xml,
-//				c("голова", te(1, 29, 1, 28, "голова"), "голова") 
-//				);
+		testCompletionFor(xml,
+				c("голова", te(1, 29, 1, 28, "голова"), "голова") 
+				);
 	}
 
 	@Test
@@ -63,10 +62,10 @@ public class BrukPluginTest extends AbstractCacheBasedTest {
 				"<token value=\"голова\" lemma=\"голова\" tags=\"" +
 				"|";
 
-//		testCompletionFor(xml,
-//				c("noun:anim:f:v_naz", te(1, 43, 1, 42, "noun:anim:f:v_naz"), "noun:anim:f:v_naz"), 
-//				c("noun:anim:m:v_naz", te(1, 43, 1, 42, "noun:anim:m:v_naz"), "noun:anim:m:v_naz"),
-//				c("noun:inanim:f:v_naz", te(1, 43, 1, 42, "noun:inanim:f:v_naz"), "noun:inanim:f:v_naz")
-//		);
+		testCompletionFor(xml,
+				c("noun:anim:f:v_naz", te(1, 43, 1, 42, "noun:anim:f:v_naz"), "noun:anim:f:v_naz"), 
+				c("noun:anim:m:v_naz", te(1, 43, 1, 42, "noun:anim:m:v_naz"), "noun:anim:m:v_naz"),
+				c("noun:inanim:f:v_naz", te(1, 43, 1, 42, "noun:inanim:f:v_naz"), "noun:inanim:f:v_naz")
+		);
   }
 }
